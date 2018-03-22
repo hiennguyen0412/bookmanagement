@@ -1,4 +1,4 @@
-package com.example.hiennv.bookmanagement;
+package com.example.hiennv.bookmanagement.utils;
 
 import android.app.Activity;
 import android.content.Context;
