@@ -8,31 +8,20 @@ public class Book {
     private int id;
     private String name;
     private String author;
-    private Category category;
-    private int quantity;
+    private String type;
     private double price;
-    private String description;
+    private byte[] image;
 
     public Book() {
     }
 
-    public Book(String name, String author, Category category, int quantity, double price, String description) {
-        this.name = name;
-        this.author = author;
-        this.category = category;
-        this.quantity = quantity;
-        this.price = price;
-        this.description = description;
-    }
-
-    public Book(int id, String name, String author, Category category, int quantity, double price, String description) {
+    public Book(int id, String name, String author, String type, double price, byte[] image) {
         this.id = id;
         this.name = name;
         this.author = author;
-        this.category = category;
-        this.quantity = quantity;
+        this.type = type;
         this.price = price;
-        this.description = description;
+        this.image = image;
     }
 
     public int getId() {
@@ -59,20 +48,12 @@ public class Book {
         this.author = author;
     }
 
-    public Category getCategory() {
-        return category;
+    public String getType() {
+        return type;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public double getPrice() {
@@ -83,11 +64,11 @@ public class Book {
         this.price = price;
     }
 
-    public String getDescription() {
-        return description;
+    public byte[] getImage() {
+        return image;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 }
