@@ -50,15 +50,15 @@ public class AdapterBook extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View row = inflater.inflate(R.layout.listview_row, null);
-        TextView txtID = row.findViewById(R.id.txtID);
+        TextView txtAuthor = row.findViewById(R.id.txtAuthor);
         TextView txtName = row.findViewById(R.id.txtName);
         TextView txtPrice = row.findViewById(R.id.txtPrice);
         ImageView imgHDD = row.findViewById(R.id.imgHinhDaiDien);
         Button btnEdit = row.findViewById(R.id.btnEdit);
         Button btnDel = row.findViewById(R.id.btnDel);
 
-        Book book = list.get(i);
-        txtID.setText(book.getId()+"");
+        final Book book = list.get(i);
+        txtAuthor.setText(book.getAuthor());
         txtName.setText(book.getName());
         txtPrice.setText(book.getPrice()+"");
         Bitmap bm = BitmapFactory.decodeByteArray(book.getImage(),0,book.getImage().length);
@@ -68,6 +68,7 @@ public class AdapterBook extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, UpdateActivity.class);
+                intent.putExtra("ID", book.getId());
                 context.startActivity(intent);
             }
         });

@@ -57,7 +57,7 @@
         android:hint="Price" />
 
     <ImageView
-        android:id="@+id/img"
+        android:id="@+id/imgUpdate"
         android:layout_width="150dp"
         android:layout_height="160dp"
         android:layout_alignStart="@+id/edtPrice"
@@ -66,7 +66,7 @@
     <Button
         android:layout_marginLeft="20dp"
         android:id="@+id/btnSelect"
-        android:layout_toRightOf="@id/img"
+        android:layout_toRightOf="@id/imgUpdate"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/edtPrice"
         android:text="Select Image"
@@ -76,7 +76,7 @@
     <Button
         android:layout_marginLeft="40dp"
         android:layout_alignParentLeft="true"
-        android:layout_below="@id/img"
+        android:layout_below="@id/imgUpdate"
         android:text="Save"
         android:id="@+id/btnSave"
         android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
     <Button
         android:layout_marginRight="40dp"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/img"
+        android:layout_below="@id/imgUpdate"
         android:text="Cancel"
         android:id="@+id/btnCancel"
         android:layout_width="wrap_content"
