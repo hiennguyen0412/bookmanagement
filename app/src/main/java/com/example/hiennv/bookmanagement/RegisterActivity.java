@@ -1,5 +1,6 @@
 package com.example.hiennv.bookmanagement;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -9,9 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.hiennv.bookmanagement.utils.DBUtils;
+
 public class RegisterActivity extends AppCompatActivity {
-//    final String DATABASE_NAME = "BookManagement.sqlite";
-//    SQLiteDatabase database;
+    final String DATABASE_NAME = "BookManagement.sqlite";
+    SQLiteDatabase database;
     EditText edtUsername, edtPassword;
     Button btnRegister;
 
@@ -29,6 +32,9 @@ public class RegisterActivity extends AppCompatActivity {
                     Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
                     startActivity(intent);
                 }
+                else{
+                    Toast.makeText(RegisterActivity.this, "Register failed", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -40,6 +46,18 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
     private boolean addAccount(){
+        String username = edtUsername.getText().toString();
+        String password = edtPassword.getText().toString();
+        database = DBUtils.initDatabase(this, DATABASE_NAME);
+
+        ContentValues values = new ContentValues();
+        values.put("Account", username);
+        values.put("Account", password);
+
+        // Insert to database
+        database.insert("Account", null, values);
+
+
         return true;
     }
 }
