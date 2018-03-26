@@ -34,12 +34,11 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(checkLogin()){
+                if (checkLogin()) {
                     Toast.makeText(LoginActivity.this, "Login successfully", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(i);
-                }
-                else {
+                } else {
                     Toast.makeText(LoginActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
 
                 }
@@ -62,8 +61,8 @@ public class LoginActivity extends AppCompatActivity {
         String password = edtPassword.getText().toString();
         database = DBUtils.initDatabase(this, DATABASE_NAME);
         Cursor cursor = database.rawQuery("SELECT * FROM Account WHERE Username = ? " +
-                "AND Password = ?", new String[]{username,password});
-        for(int i=0;i<cursor.getCount();i++){
+                "AND Password = ?", new String[]{username, password});
+        for (int i = 0; i < cursor.getCount(); i++) {
             cursor.moveToPosition(i);
             return true;
         }
