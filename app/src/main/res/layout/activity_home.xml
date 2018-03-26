@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-android:layout_height="match_parent"
-android:layout_width="match_parent"
-xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeActivity">
 
     <Button
+        android:layout_marginLeft="10dp"
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,6 +39,7 @@ xmlns:android="http://schemas.android.com/apk/res/android">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <Button
+
         android:layout_below="@+id/btnAdd"
         android:id="@+id/btnSearch"
         android:layout_alignParentRight="true"
@@ -45,8 +48,9 @@ xmlns:android="http://schemas.android.com/apk/res/android">
         android:layout_height="wrap_content" />
 
     <Button
+        android:layout_marginLeft="10dp"
         android:layout_below="@+id/btnAdd"
-        android:text="Show List Type"
+        android:text="All Type"
         android:id="@+id/btnShowType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
