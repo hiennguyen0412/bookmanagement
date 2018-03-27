@@ -14,7 +14,7 @@
 
     <RadioGroup
         android:layout_centerHorizontal="true"
-        android:id="@+id/radioSelect"
+        android:id="@+id/radioCondition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <RadioButton

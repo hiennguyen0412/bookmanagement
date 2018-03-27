@@ -60,6 +60,7 @@ public class AdapterBook extends BaseAdapter {
         TextView txtAuthor = row.findViewById(R.id.txtAuthor);
         TextView txtName = row.findViewById(R.id.txtName);
         TextView txtPrice = row.findViewById(R.id.txtPrice);
+        TextView txtType = row.findViewById(R.id.txtType);
         ImageView imgHDD = row.findViewById(R.id.imgHinhDaiDien);
         Button btnEdit = row.findViewById(R.id.btnEdit);
         Button btnDel = row.findViewById(R.id.btnDel);
@@ -68,6 +69,7 @@ public class AdapterBook extends BaseAdapter {
         txtAuthor.setText(book.getAuthor());
         txtName.setText(book.getName());
         txtPrice.setText(book.getPrice()+"");
+        txtType.setText(book.getType());
         Bitmap bm = BitmapFactory.decodeByteArray(book.getImage(),0,book.getImage().length);
         imgHDD.setImageBitmap(bm);
 
@@ -83,7 +85,7 @@ public class AdapterBook extends BaseAdapter {
         btnDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(context, "Del????", Toast.LENGTH_SHORT).show();
+
                 AlertDialog.Builder builder;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Dialog_Alert);
