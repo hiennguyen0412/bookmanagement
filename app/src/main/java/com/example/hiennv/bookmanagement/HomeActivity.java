@@ -34,8 +34,8 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        addControls();
-        readData();
+        init();
+        loadAllBooks();
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,7 +53,7 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    private void addControls() {
+    private void init() {
         listView = findViewById(R.id.listView);
         list = new ArrayList<>();
         adapter = new AdapterBook(this, list);
@@ -73,7 +73,7 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    private void readData(){
+    private void loadAllBooks(){
         database = DBUtils.initDatabase(this, DATABASE_NAME);
         Cursor cursor = database.rawQuery("SELECT * FROM Book", null);
         list.clear();

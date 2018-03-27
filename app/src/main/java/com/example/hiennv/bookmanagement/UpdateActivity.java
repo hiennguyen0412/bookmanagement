@@ -28,8 +28,6 @@ public class UpdateActivity extends AppCompatActivity {
     EditText edtID, edtName, edtAuthor, edtType, edtPrice;
     ImageView imgUpdate;
     Button btnSave, btnCancel, btnSelect;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -142,6 +140,7 @@ public class UpdateActivity extends AppCompatActivity {
         contentValues.put("Author", author);
         contentValues.put("Type", type);
         contentValues.put("Price", price);
+        contentValues.put("Image", img);
         SQLiteDatabase database = DBUtils.initDatabase(this, DATABASE_NAME);
         database.update("Book", contentValues, "ID = ?", new String[]{id+""});
         Intent intent = new Intent(this, HomeActivity.class);
@@ -150,18 +149,19 @@ public class UpdateActivity extends AppCompatActivity {
 
 
     }
-     private byte[] getByteArrayFromImageView(ImageView imgv){
-         BitmapDrawable drawable = (BitmapDrawable) imgv.getDrawable();
-         Bitmap bmp = drawable.getBitmap();
+    private byte[] getByteArrayFromImageView(ImageView imgv){
+        BitmapDrawable drawable = (BitmapDrawable) imgv.getDrawable();
+        Bitmap bmp = drawable.getBitmap();
 
-         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-         bmp.compress(Bitmap.CompressFormat.PNG, 100,stream);
-         byte[] byteArray = stream.toByteArray();
-         return byteArray;
-     }
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, 100,stream);
+        byte[] byteArray = stream.toByteArray();
+        return byteArray;
+    }
 
-     private void cancel(){
-         Intent intent = new Intent(this, HomeActivity.class);
-         startActivity(intent);
-     }
+    private void cancel(){
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
+
 }
